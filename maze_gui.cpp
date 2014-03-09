@@ -1,8 +1,6 @@
 #include<iostream>
 #include<cstdio>
 #include<cstdlib>
-
-
 #include "bitmap.h"
 #include <assert.h>
 #include <ctime>
@@ -11,7 +9,6 @@
 #include <sys/time.h>
 #include <unistd.h>
 
-using namespace std;
 #include "rect.h"
 #include "label.h"
 #include <cmath>
@@ -20,9 +17,10 @@ using namespace std;
 #define SCALE 1
 
 using namespace std;
-	SimpleWindow m("Micromouse simulation",25,15,Position(1.0,0.0));
-	SimpleWindow s("Micromouse :: Select the shape and color ",10,7,Position(5.0,5.0));
-	color Mouse=Green,Face;
+
+SimpleWindow m("Micromouse simulation",25,15,Position(1.0,0.0));
+SimpleWindow s("Micromouse :: Select the shape and color ",10,7,Position(5.0,5.0));
+color Mouse=Green,Face;
 
 float time_u(struct timeval end,struct timeval start)
 {

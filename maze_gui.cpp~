@@ -1,8 +1,6 @@
 #include<iostream>
 #include<cstdio>
 #include<cstdlib>
-
-
 #include "bitmap.h"
 #include <assert.h>
 #include <ctime>
@@ -11,7 +9,6 @@
 #include <sys/time.h>
 #include <unistd.h>
 
-using namespace std;
 #include "rect.h"
 #include "label.h"
 #include <cmath>
@@ -135,25 +132,25 @@ int ApiMain(){
 	count=-3;
 	fscanf(mazemove,"%d %d %d %d %d %d\n",&y_n,&x_n,&face_n,&stage_n,&signal_n,&del);
 	CircleShape C(m,Position(16.0/max*(4.0/6.0)*(x_n/2+1.125),16.0/max*(4.0/6.0)*(y_n/2+0.875)),Mouse,16.0/max*(4.0/6.0)*0.6); 
+	C.Draw();
+	if(face_n==0){
+		CircleShape C(m,Position(16.0/max*(4.0/6.0)*(x_n/2+1.125),16.0/max*(4.0/6.0)*(y_n/2+0.725)),White,16.0/max*0.15);
 		C.Draw();
-		if(face_n==0){
-			CircleShape C(m,Position(16.0/max*(4.0/6.0)*(x_n/2+1.125),16.0/max*(4.0/6.0)*(y_n/2+0.725)),White,16.0/max*0.15);
-			C.Draw();
-		}
-		else if(face_n==1){
-			CircleShape C(m,Position(16.0/max*(4.0/6.0)*(x_n/2+0.975),16.0/max*(4.0/6.0)*(y_n/2+0.875)),White,16.0/max*0.15);
-			C.Draw();
-		}
-		else if(face_n==2){
-			CircleShape C(m,Position(16.0/max*(4.0/6.0)*(x_n/2+1.125),16.0/max*(4.0/6.0)*(y_n/2+1.025)),White,16.0/max*0.15);
-			C.Draw();
-		}
-		else if(face_n==3){
-			CircleShape C(m,Position(16.0/max*(4.0/6.0)*(x_n/2+1.275),16.0/max*(4.0/6.0)*(y_n/2+0.875)),White,16.0/max*0.15);
-			C.Draw();
-		}
+	}
+	else if(face_n==1){
+		CircleShape C(m,Position(16.0/max*(4.0/6.0)*(x_n/2+0.975),16.0/max*(4.0/6.0)*(y_n/2+0.875)),White,16.0/max*0.15);
+		C.Draw();
+	}
+	else if(face_n==2){
+		CircleShape C(m,Position(16.0/max*(4.0/6.0)*(x_n/2+1.125),16.0/max*(4.0/6.0)*(y_n/2+1.025)),White,16.0/max*0.15);
+		C.Draw();
+	}
+	else if(face_n==3){
+		CircleShape C(m,Position(16.0/max*(4.0/6.0)*(x_n/2+1.275),16.0/max*(4.0/6.0)*(y_n/2+0.875)),White,16.0/max*0.15);
+		C.Draw();
+	}
 
-		delay(del/SCALE);
+	delay(del/SCALE);
 	m.RenderRectangle(Position(16.0/max*(4.0/6.0)*(x_n/2+0.77),16.0/max*(4.0/6.0)*(y_n/2+0.52)),Position(16.0/max*(4.0/6.0)*(x_n/2+1.48),16.0/max*(4.0/6.0)*(y_n/2+1.23)),White,false);
 	
 		
